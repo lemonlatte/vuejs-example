@@ -65,7 +65,7 @@ gulp.task("fonts", function () {
   .pipe(gulp.dest("./public/static/fonts/"))
 })
 
-gulp.task("html", function(){
+gulp.task("html", ["bundle-js"], function(){
   return gulp.src("./src/index.html")
     .pipe(useref())
     .pipe(gulpif('*.css', rev()))
